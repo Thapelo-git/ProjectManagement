@@ -7,6 +7,8 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { DotFilledIcon, PlusIcon } from '@radix-ui/react-icons'
 
 import React from 'react'
+import IssueList from './IssueList'
+import ChatBox from './ChatBox'
 
 const ProjectDetails = () => {
 
@@ -19,9 +21,9 @@ const ProjectDetails = () => {
         <ScrollArea className='h-screen lg:w-[69%] pr-2'>
             <div className='text-gray-400 pb-10 w-full'>
                 <h1 className='text-lg fonts-semibold pb-5'>Create Ecommerce Project</h1>
-            </div>
-            <div className='space-y-5 pb-10'>
-                <p className='w-full md:max-w-lg lg:max-w-xl'>
+            
+            <div className='space-y-5 pb-10 text-sm'>
+                <p className='w-full md:max-w-lg lg:max-w-xl '>
                     Start the your project with react
                 </p>
                 <div className='flex'>
@@ -61,7 +63,20 @@ const ProjectDetails = () => {
                 </div>
                 
             </div>
+
+            <section>
+                <p className='py-5 border-b text-lg -tracking-wider'>Tasks</p>
+                <div className='lg:flex md:flex gap-3 justify-between py-5'>
+                    <IssueList status='pending' title='Todo List'/>
+                    <IssueList status='in_progress' title='In progress'/>
+                    <IssueList status='done' title='Done'/>
+                </div>
+            </section>
+            </div>
         </ScrollArea>
+        <div>
+            <ChatBox/>
+        </div>
         </div>
     </div>
   )
