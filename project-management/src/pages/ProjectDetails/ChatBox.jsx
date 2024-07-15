@@ -1,13 +1,14 @@
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { PaperPlaneIcon } from '@radix-ui/react-icons'
-import React from 'react'
+import React, { useState } from 'react'
 
 const ChatBox = () => {
-  const [message,setMessage]=useState("")
+  const [message,setMessage]=useState('')
   const handleSendMessage =()=>{
-
+      console.log('message',message)
   }
   const handleMessageChange=(e)=>{
     setMessage(e.target.value);
@@ -15,7 +16,7 @@ const ChatBox = () => {
   return (
     <div className='stricky'>
       <div className='border rounded-lg'>
-        <h1 className='border-b p-5'>Chat Bot</h1>
+        <h1 className='border-b p-5'>Chat Box</h1>
         <ScrollArea className='h-[32rem] w-full p-5 flex gap-3 flex-col'>
           {[1,1,1,1].map((item,index)=>(
           index%2 == 0?( <div className='flex gap-2 mb-2 justify-start' key={item}>
@@ -43,6 +44,7 @@ const ChatBox = () => {
         </ScrollArea>
         <div className='relative p-0'>
           <Input
+          type='text'
           placeholder="type message..."
           className='py-7 border-t outline-none focus:outline-none
           focus:ring-0 rounded-none border-b-0 border-x-0'
