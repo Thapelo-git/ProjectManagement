@@ -56,7 +56,7 @@ const Subscription = () => {
                     buttonName: true ? 'Current Plan' : 'Get Started'
                 }} />
                 <SubscriptionCard data={{
-                    planName: 'Annual Plan', fetures: annualPlan, planType: 'ANNUALY', price: 100,
+                    planName: 'Annual Plan', fetures: annualPlan, planType: 'ANNUALLY', price: 100,
                     buttonName: true ? 'Current Plan' : 'Get Started'
                 }} />
             </div>
